@@ -4,7 +4,6 @@
 def multiple_returns(sentence):
     # Get the length of the sentence
     length = len(sentence)
-    
     # Check if the sentence is empty
     if length == 0:
         first_char = None
