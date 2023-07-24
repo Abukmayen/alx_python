@@ -1,4 +1,4 @@
-#!/usr/bin/pytnon3
+#!/usr/bin/python3
 
 
 def raise_exception_msg(message=""):
@@ -6,6 +6,6 @@ def raise_exception_msg(message=""):
 
 if __name__ == "__main__":
     try:
-        def raise_exception_msg("C is fun")
-    except- NameError as ne:
+        raise_exception_msg("C is fun")
+    except NameError as ne:
         print(ne)
