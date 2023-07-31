@@ -1,12 +1,22 @@
 #!/usr/bin/python3
-class Square:
-    def __init__(self, size=0):
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+"""
+Module - 1-square
+Defines a class Square with a private instance attribute size
+"""
 
-    def dict_(self):
-        return self.__dict__
+
+class Square:
+    """
+    A class Square with private instance attribute size
+    """
+    def __init__(self, size):
+        """
+        Initialize a new Square with the given size
+
+        Args:
+        size (int): The size of the new square object.
+
+        Returns:
+        None
+        """
+        self.__size = size
