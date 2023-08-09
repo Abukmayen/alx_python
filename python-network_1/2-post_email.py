@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-"""take a url and display the values"""
+"""I documented you"""
 
-
-import requests
+import urllib.request
+import urllib.parse
 import sys
 
-
-if __name__ == "__main__":
-    """send the email"""
+if __name__ == '__main__':
+    """"Documented"""
     url = sys.argv[1]
-    email = sys.argv[2]
-    context = {
-        "email": email
-    }
-    response = requests.post(url, data=context)
-    print("{}".format(response.text))
+    message = {"email": sys.argv[2]}
+    data = urllib.parse.urlencode(message)
+    data = data.encode('ascii')
+    req = urllib.request.Request(url, data)
+    with urllib.request.urlopen(req) as response:
+        content = response.read()
+        print("{}".format(content.decode("utf-8")))
