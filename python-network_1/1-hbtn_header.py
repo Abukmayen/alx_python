@@ -1,11 +1,17 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
-Python script that takes in a URL, sends a request to the URL and displays
-the value of the variable X-Request-Id in the response header
+Sends a request to a URL and displays the value of the X-Request-Id header in the response.
 """
-import requests
-from sys import argv
 
-if __name__ == '__main__':
-    r = requests.get(argv[1])
-    print(r.headers.get('X-Request-Id'))
+import requests
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: ./1-hbtn_header.py <URL>")
+    sys.exit(1)
+
+url = sys.argv[1]
+response = requests.get(url)
+
+x_request_id = response.headers.get('X-Request-Id')
+print(x_request_id)
